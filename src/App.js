@@ -1,5 +1,8 @@
+//import dependency components
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+//import custom components
 import './App.css';
 import { login, logout, selectUser } from './features/userSlice';
 import Feed from './Feed';

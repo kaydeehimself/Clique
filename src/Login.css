@@ -1,3 +1,7 @@
+.header {
+    display: hidden;
+}
+
 .login {
     display: grid;
     place-items: center;
@@ -5,6 +9,7 @@
     margin-right: auto;
     padding-top: 100px;
     padding-bottom: 100px;
+    background-color: #f3f2ef;
 }
 
 .login > img {
@@ -37,11 +42,21 @@
     color: #fff;
     background-color: #0074b1;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.login > form > button:hover {
+    background-color: #04a7ff;
 }
 
 .login_register {
     color: #0177b7;
     cursor: pointer;
+}
+
+.login_register:hover {
+    color: #04a7ff;
 }
 
 .login > p {

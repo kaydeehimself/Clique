@@ -63,9 +63,9 @@ function Login() {
                 })
             );
         })
-        .catch((error) => {
-            // Display the error message to the user in some way
-            alert(error.message);
+        .catch((err) => {            
+            alert('Sign in/Register unsuccessful, try again');
+            console.log(err)
         });
     };
       
