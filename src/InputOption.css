@@ -15,3 +15,18 @@
 .inputOption > h4 {
     margin-left: 5px;
 }
+
+@media screen and (max-width: 768px) {
+    .inputOption {
+     width: 100%;
+    }
+ }
+
+ @media screen and (max-width: 320px) {
+    .inputOption {
+        display: block;
+        text-align: center;
+        width: fit-content;
+        overflow-x: hidden;
+    }
+ }

@@ -8,8 +8,28 @@
 .app_body {
     display: flex;
     margin-top: 35px;
-    width: 1200px;
-    max-width: 1200px;
+    max-width: 100%;
     margin-left: 20px;
     margin-right: 20px;
 }
+
+@media screen and (max-width: 768px) {
+    .app_body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+ }
+
+ @media screen and (max-width: 480px) {
+    .app_body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+ }
+
+ @media screen and (max-width: 320px) {
+    .app_body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+ }

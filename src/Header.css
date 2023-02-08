@@ -2,8 +2,8 @@
     position: sticky;
     top: 0;
     display: flex;
-    background-color: white;
-    justify-content: space-evenly;
+    background-color:  white;
+    justify-content: center;
     border-bottom: 0.1px solid lightgray;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -13,6 +13,7 @@
 
 .header_left {
     display: flex;
+    margin-right: 0.8em;
 }
 
 .header_left > img {
@@ -39,4 +40,33 @@
 
 .header_right {
     display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        width: 100%;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+    
+    .header_search > input {
+       width: 0.1em;
+    }
+
+    .header_search > input:focus {
+        width: 100%;
+    }
+
+    .header_right {
+        padding-top: 10px;
+        justify-content: left;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        display: grid;
+        width: 100%;
+        max-width: 100%;
+    }
 }

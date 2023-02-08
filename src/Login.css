@@ -62,3 +62,9 @@
 .login > p {
     margin-top: 20px;
 }
+
+@media screen and (max-width: 480px) {
+    .login {
+        max-width: 100%;
+    }
+}

@@ -28,7 +28,6 @@ function Header() {
     <div className='header'>
         <div className="header_left">
             <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="Linkedin-logo" />
-
             <div className="header_search">
                 <SearchIcon />
                 <input placeholder='Search' type="text" />
