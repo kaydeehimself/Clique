@@ -44,22 +44,6 @@
 
 @media screen and (max-width: 768px) {
     .feed {
-        flex: none;     
-        width: 100%;
-        overflow-x: hidden;
-        margin-left: -195px;
+        flex: 1;
     }
- }
-
- @media screen and (max-width: 320px) {
-    .feed {
-        display: flex;
-        flex-direction: column;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    .feed_inputContainer {
-        width: fit-content;
-    }
- }
+}

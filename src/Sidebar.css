@@ -106,8 +106,6 @@
 
 @media screen and (max-width: 768px) {
    .sidebar {
-    flex: none;
-    visibility: hidden;
-    overflow-x: hidden;
+    display: none;
    }
 }

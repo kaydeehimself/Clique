@@ -20,7 +20,7 @@
 }
 
 .post_body {
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
 }
 
 .post_info > h2 {
@@ -30,18 +30,4 @@
 .post_buttons {
     display: flex;
     justify-content: space-evenly;
-}
-
-@media screen and (max-width: 768px) {
-    .post {
-     width: 100%;
-     overflow-x: hidden;
-    }
- }
-
- @media screen and (max-width: 320px) {
-    .post {
-        max-width: fit-content;
-        overflow-x: hidden;
-    }
 }

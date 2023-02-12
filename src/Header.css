@@ -46,7 +46,6 @@
     .header {
         width: 100%;
         justify-content: center;
-        overflow-x: hidden;
     }
     
     .header_search > input {
