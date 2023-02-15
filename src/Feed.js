@@ -59,7 +59,7 @@ function Feed() {
           <CreateIcon />
           <form>
             <input 
-              value={input} 
+              value={input}
               onChange={(e) => setInput(e.target.value)} 
               type="text" 
             />
@@ -72,7 +72,7 @@ function Feed() {
           <InputOption Icon={EventNoteIcon} color="#C0CBCD" title ='Event'/>
           <InputOption
             Icon={CalendarViewDayIcon}
-            title="Write article"
+            title="Article"
             color="#7FC15E"
           />
         </div>

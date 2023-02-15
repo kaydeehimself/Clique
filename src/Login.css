@@ -8,11 +8,18 @@
     background-color: #f3f2ef;
 }
 
-.login > img {
-    object-fit: contain;
-    height: 70px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.logo-login {
+    margin-right: 10px;
+    font-weight: bolder;
+    background-color: white;
+    padding: 0.2em;
+    border-radius: 1em 1em 0 1em;
+    font-size: 8rem;
+    margin-bottom: 0.5em;
+}
+
+.logo-login > span {
+    color: red;
 }
 
 .login > form {
@@ -72,13 +79,12 @@
     
     .login > form > button {
         margin-left: 10px;
-        width: 75.7vw;
+        width: auto;
         height: 7vh;
         font-size: medium;        
     }
 
-    .login > img {
-        object-fit: contain;
-        width: fit-content;
+    .logo-login {
+        font-size: 3rem;
     }
 }

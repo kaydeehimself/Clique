@@ -71,11 +71,7 @@ function Login() {
       
     return (
     <div className="login">
-        <img
-        src="https://news.hitb.org/sites/default/files/styles/large/public/field/image/500px-LinkedIn_Logo.svg__1.png"
-        alt=""
-        />
-    
+        <h2 className='logo-login'>Cliq<span>u</span>e</h2>    
         <form onSubmit={loginToApp}>
         <input
             placeholder="Full name (required if registering)"
