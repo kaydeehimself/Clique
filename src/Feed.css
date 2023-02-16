@@ -41,6 +41,9 @@
     display: flex;
     justify-content: space-evenly;
 }
+.space {
+    height: 15dvh;
+}
 
 @media screen and (max-width: 768px) {
     .feed {

@@ -76,6 +76,7 @@
         display: flex;
         justify-content: center;
         padding-left: 20px;
+        padding-bottom: 0.5em;
         border-top: 0.1px solid rgb(211, 211, 211);
         position: fixed;
         bottom: 0;

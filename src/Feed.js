@@ -90,7 +90,8 @@ function Feed() {
             photoUrl={photoUrl}          
           />      
           )})}
-      </FlipMove>     
+      </FlipMove>
+      <div className="space"></div>    
     </div>
   );
 };
