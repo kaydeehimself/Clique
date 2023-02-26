@@ -83,12 +83,12 @@ function Feed() {
         {posts.map(({id, data:{ name, description, message, photoUrl }}) => {
           return(
             <Post 
-            key={id}
-            name={name}
-            description={description}
-            message={message}
-            photoUrl={photoUrl}          
-          />      
+              key={id}
+              name={name}
+              description={description}
+              message={message}
+              photoUrl={photoUrl}  
+            />      
           )})}
       </FlipMove>
       <div className="space"></div>    
