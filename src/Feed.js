@@ -52,6 +52,10 @@ function Feed() {
     setInput('')
   }
   
+  const deletePost = (postId) => {
+    db.collection('posts').doc(postId).delete();
+  }
+  
   return (
     <div className="feed">
       <div className="feed_inputContainer">
@@ -84,11 +88,13 @@ function Feed() {
           return(
             <Post 
               key={id}
+              id ={id}
               name={name}
               description={description}
               message={message}
-              photoUrl={photoUrl}  
-            />      
+              photoUrl={photoUrl}
+              deletePost = {deletePost}
+            />    
           )})}
       </FlipMove>
       <div className="space"></div>    

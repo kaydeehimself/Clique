@@ -1,4 +1,5 @@
 .post {
+    position: relative;
     background-color: white;
     padding: 15px;
     margin-bottom: 10px;
@@ -18,6 +19,82 @@
     font-size: 12px;
     color: grey;
 }
+
+.ellipsis {
+    position: relative;    
+}
+
+
+.ellipsis > ul > li {
+    display: block;
+    position: absolute;
+    top: -1.5em;
+    right: 0;
+    z-index: 1;
+    background-color: #c8e6ff;
+    padding: 0.5rem;
+    font-size: small;
+    cursor: pointer;
+}
+
+.ellipsis > ul li:hover {
+    box-shadow: 0 0 5px #0000004d;
+}
+
+.delete-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #99999980; /* semi-transparent black background */
+    z-index: 1000; /* make sure the modal is on top of everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .delete-modal-content {
+    background-color: white;
+    padding: 5%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0000004d;
+    max-width: 50%;
+    width: 50%;
+    text-align: center;
+  }  
+ 
+  .delete-modal-content > p {
+    color: #0000a3;
+  }
+
+  .delete-modal-content > button {
+    all: unset;
+    border: 1px solid #0000a3;
+    padding: 0.7em;
+    margin: 1em 1em;
+    color: #0000a3;
+    cursor: pointer;
+  }
+
+  .delete-modal-content > button:hover {
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+  }
+
+  .delete-modal-content > .no {
+    background-color: #0000a3;
+    color: #ffffff;
+  }
+
+  .yes:hover {
+    border: 1px solid #ff0000;
+    background-color: #ff0000;
+    color: #ffffff;
+  }
+
+  /* body.delete-modal-open {
+    filter: blur(5px)
+  } */
 
 .post_body {
     overflow-wrap: break-word;
