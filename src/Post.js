@@ -8,8 +8,8 @@ import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
 
-const Post = forwardRef(({ id, name, description, message, photoUrl, deletePost },ref) => {
-    const [click, setClick] = useState(false)
+const Post = forwardRef(({ id, name, description, message, photoUrl, deletePost, timestamp, mediaUrl, mediaType, caption },ref) => {
+    const [click, setClick] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
     const openModal = () => setIsOpen(true);
@@ -23,6 +23,7 @@ const Post = forwardRef(({ id, name, description, message, photoUrl, deletePost 
     const doClick = () => setClick(!click);
     const undoClick = () => setClick(false);
 
+    
   return (
     <div ref={ref} className="post">
         <div className="post_header">
@@ -30,6 +31,7 @@ const Post = forwardRef(({ id, name, description, message, photoUrl, deletePost 
             <div className="post_info">
                 <h2>{name}</h2>
                 <p>{description}</p>
+                <p>{new Date(timestamp?.toDate()).toLocaleString()}</p>
             </div>
         </div>       
         <div className="ellipsis">
@@ -62,6 +64,14 @@ const Post = forwardRef(({ id, name, description, message, photoUrl, deletePost 
         }
         <div className="post_body">
             <p>{message}</p>
+            <div className="post-media">
+            {mediaType === 'image' ? (
+                <img src={mediaUrl} alt="Post" />
+            ) : (
+                <video src={mediaUrl} alt="Post" controls />
+            )}
+            <p>{caption}</p>
+            </div>
         </div>
         <div className="post_buttons">
             <InputOption Icon={ThumbUpAltOutlinedIcon} title='Like'

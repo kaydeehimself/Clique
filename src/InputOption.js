@@ -1,11 +1,11 @@
 import React from 'react'
 import './InputOption.css'
 
-function InputOption({ Icon, title, color, }) {
+function InputOption({ Icon, title, color, openModal }) {
   return (
-    <div className="inputOption">
+    <div className="inputOption" onClick={openModal}>
         <Icon style={{ color: color}} />
-        <h4>{title}</h4>        
+        <p>{title}</p>        
     </div>
   )
 }

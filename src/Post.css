@@ -15,6 +15,10 @@
     margin-left: 10px;
 }
 
+.post_info > h2 {
+  color: #575757;
+}
+
 .post_info > p {
     font-size: 12px;
     color: grey;
@@ -30,15 +34,17 @@
     position: absolute;
     top: -1.5em;
     right: 0;
+    width: 10em;
     z-index: 1;
-    background-color: #c8e6ff;
+    background-color: #d1d1d1;
+    border: 1px solid #cacaca;
     padding: 0.5rem;
     font-size: small;
     cursor: pointer;
 }
 
 .ellipsis > ul li:hover {
-    box-shadow: 0 0 5px #0000004d;
+  background-color: #dddddd;
 }
 
 .delete-modal {
@@ -47,8 +53,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #99999980; /* semi-transparent black background */
-    z-index: 1000; /* make sure the modal is on top of everything */
+    background-color: #000000b7; 
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,16 +62,15 @@
   
   .delete-modal-content {
     background-color: white;
-    padding: 5%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #0000004d;
-    max-width: 50%;
+    padding: 2em;
+    box-shadow: 0 0 1em #cecece4d;
+    max-width: 300px;
     width: 50%;
     text-align: center;
   }  
  
   .delete-modal-content > p {
-    color: #0000a3;
+    color: #525252;
   }
 
   .delete-modal-content > button {
@@ -97,14 +102,34 @@
   } */
 
 .post_body {
-    overflow-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.post-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.post-media img,
+.post-media video {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.post-media p {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .post_info > h2 {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .post_buttons {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
