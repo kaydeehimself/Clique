@@ -11,7 +11,7 @@ import 'firebase/compat/storage';
 import './Feed.css';
 import InputOption from './InputOption';
 import Post from './Post';
-import { db, } from './firebase';
+import { db, storage } from './firebase';
 import { selectUser } from './features/userSlice';
 
 //import Icon
@@ -51,6 +51,9 @@ function Feed() {
 
   const sendPost = (e) => {
     e.preventDefault();
+    if (!input) {
+      return;
+    }
     db.collection("posts").add({
       name: user.displayName,
       description: user.email,
@@ -96,12 +99,14 @@ function Feed() {
     setUploadError(null);
 
     try {
-      const storageRef = firebase.storage().ref();
+      const storageRef = storage.ref();
       const fileRef = storageRef.child(media.name);
       await fileRef.put(media);
       const downloadUrl = await fileRef.getDownloadURL();
-      const db = firebase.firestore();
       await db.collection('posts').add({
+        name: user.displayName,
+        description: user.email,
+        photoUrl: user.photoUrl || `https://ui-avatars.com/api/?name=${user.email[0]}`,
         [mediaType + 'Url']: downloadUrl,
         caption: caption,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
@@ -223,11 +228,11 @@ function Feed() {
           <InputOption Icon={EventNoteIcon} color="#C0CBCD" title ='Event'/>
           <InputOption Icon={CalendarViewDayIcon} title="Article" color="#7FC15E" />
         </div>        
-      </div>
-      
-      {/* Posts */}
+      </div> 
       <FlipMove>
-        {posts.map(({id, data:{ name, description, message, photoUrl, timestamp, }}) => {
+        {posts.map(({id, data:{ name, description, message, photoUrl, timestamp, imageUrl, videoUrl, caption }}) => {
+          const mediaType = imageUrl ? 'image' : videoUrl ? 'video' : null;
+          const mediaUrl = imageUrl || videoUrl;
           return(
             <Post 
               key={id}
@@ -238,10 +243,13 @@ function Feed() {
               photoUrl={photoUrl}
               deletePost = {deletePost}
               timestamp = {timestamp}
+              mediaType = {mediaType}
+              mediaUrl = {mediaUrl}
+              caption = {caption}
             />   
-          )})}
+        )})}
       </FlipMove>
-      <div className="space"></div>    
+      <div className="space"></div>
     </div>
   );
 };

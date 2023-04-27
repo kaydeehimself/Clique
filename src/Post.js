@@ -27,7 +27,7 @@ const Post = forwardRef(({ id, name, description, message, photoUrl, deletePost,
   return (
     <div ref={ref} className="post">
         <div className="post_header">
-            <Avatar src ={photoUrl}>{name[0]}</Avatar>
+            <Avatar src ={photoUrl}>{name ? name[0] : ''}</Avatar>
             <div className="post_info">
                 <h2>{name}</h2>
                 <p>{description}</p>
@@ -64,14 +64,17 @@ const Post = forwardRef(({ id, name, description, message, photoUrl, deletePost,
         }
         <div className="post_body">
             <p>{message}</p>
-            <div className="post-media">
-            {mediaType === 'image' ? (
-                <img src={mediaUrl} alt="Post" />
-            ) : (
-                <video src={mediaUrl} alt="Post" controls />
+            {mediaType && (
+                <div className="post-media">
+                    {mediaType === 'image' ? (
+                    <img src={mediaUrl} alt="Post" />
+                    ) : (
+                    <video src={mediaUrl} alt="Post" controls />
+                    )}
+                    <p>{caption}</p>
+                </div>
             )}
-            <p>{caption}</p>
-            </div>
+
         </div>
         <div className="post_buttons">
             <InputOption Icon={ThumbUpAltOutlinedIcon} title='Like'
